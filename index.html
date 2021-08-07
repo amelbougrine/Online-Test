@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <meta name="author" content="Amel Bougrine" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=PT+Sans|Raleway" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+<body>
+  <div id='quiz' style='font-family: "Raleway"'>
+    <div class='question'>
+      <h1></h1>
+      <p></p>
+    </div>
+    <div class='options'>
+    </div>
+    <div class='submit button' data-txt="Submit" style='font-family: "Raleway"'></div>
+    <!-- <div id='feedback'>
+      <h1>Your answer is <span id='answer'></span></h1>
+      <div class='feedbackTxt'> 
+      </div>
+      <div class='feedbackFooter'>
+        <p>Next question</p>
+        <div class='arrowNextQ'>
+          <div class='triangle'></div>
+          <div class='triangle2'></div>
+        </div>	
+      </div>
+    </div> -->
+  </div>	
+  <div id='lastScreen' style='font-family: "Raleway"'>
+    <h1>You finished the test.</h1>
+    <p>Your score is <span id='score'></span>%.</p>
+    <p>Your time is <span id='time'></span>.</p>
+    <div class='left button retake' data-txt="Retake Test"></div>
+    <div class='left button answers' data-txt="See answers"></div>
+  </div>
+  <div id='answersScreen' style='font-family: "Raleway"'>
+    <h1>Answers</h1>
+    <p>Here are all the answers to the quiz.</p>
+    <div id='answers'>
+      <h2></h2>
+      <p class='questionReminder'></p>
+      <p class='answerItem'></p>
+    </div>
+    <div class='button retake' data-txt="Retake Test"></div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

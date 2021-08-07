@@ -1,0 +1,313 @@
+#quiz, #lastScreen, #answersScreen {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	height: 600px;
+	margin: 30px auto;
+	padding: 25px;
+	font-family: Sans-serif;
+}
+#quiz .options, #lastScreen .options, #answersScreen .options {
+	margin: 0 0 20px 0;
+}
+#quiz .options .option, #lastScreen .options .option, #answersScreen .options .option {
+	margin: 15px;
+	width: auto;
+	height: 50px;
+	line-height: 50px;
+	padding: 5px 10px 0 10px;
+	box-shadow: 3px 3px 13px #eee;
+	position: relative;
+}
+#quiz .options .option:before, #lastScreen .options .option:before, #answersScreen .options .option:before, #quiz .options .option:after, #lastScreen .options .option:after, #answersScreen .options .option:after {
+	position: absolute;
+	left: 0;
+	content: "";
+	transition: 0.8s all ease;
+	bottom: 0;
+}
+#quiz .options .option:before, #lastScreen .options .option:before, #answersScreen .options .option:before {
+	height: 4px;
+	width: 0%;
+	background: #70ecfd;
+}
+#quiz .options .option:after, #lastScreen .options .option:after, #answersScreen .options .option:after {
+	width: 4px;
+	height: 0%;
+	background: #70ecfd;
+}
+#quiz .options .option:hover::before, #lastScreen .options .option:hover::before, #answersScreen .options .option:hover::before, #quiz .options .option.clicked::before, #lastScreen .options .option.clicked::before, #answersScreen .options .option.clicked::before {
+	width: 100%;
+}
+#quiz .options .option:hover, #lastScreen .options .option:hover, #answersScreen .options .option:hover {
+	cursor: pointer;
+}
+#quiz .button, #lastScreen .button, #answersScreen .button {
+	height: 50px;
+	width: 50px;
+	color: black;
+	border-radius: 50px;
+	background-color: #d9faff;
+	margin: 35px 130px 35px 11px;
+	align-self: flex-end;
+	position: relative;
+	font-size: 2em;
+	font-family: "Raleway", sans-serif;
+}
+#quiz .button:hover, #lastScreen .button:hover, #answersScreen .button:hover, #quiz .button.clicked, #lastScreen .button.clicked, #answersScreen .button.clicked {
+	cursor: pointer;
+}
+#quiz .button:hover:before, #lastScreen .button:hover:before, #answersScreen .button:hover:before, #quiz .button.clicked:before, #lastScreen .button.clicked:before, #answersScreen .button.clicked:before {
+	opacity: 0.9;
+	width: 120px;
+}
+#quiz .button:hover:after, #lastScreen .button:hover:after, #answersScreen .button:hover:after, #quiz .button.clicked:after, #lastScreen .button.clicked:after, #answersScreen .button.clicked:after {
+	left: 5px;
+}
+#quiz .button:after, #lastScreen .button:after, #answersScreen .button:after {
+	position: absolute;
+	content: attr(data-txt);
+	transition: 350ms all ease;
+	font-family: "Raleway", sans-serif;
+	top: -5px;
+	left: 23px;
+	height: 50px;
+	width: 150px;
+	line-height: 50px;
+	padding: 5px;
+	z-index: 1000;
+}
+#quiz .button:before, #lastScreen .button:before, #answersScreen .button:before {
+	opacity: 0;
+	position: absolute;
+	content: '';
+	transition: 500ms all ease;
+	transition-delay: 100ms;
+	background-color: #70ecfd;
+	top: 0px;
+	left: 0;
+	height: 50px;
+	width: 0px;
+	line-height: 50px;
+	z-index: 1;
+	border-radius: 30px;
+}
+#quiz .button.retake, #lastScreen .button.retake, #answersScreen .button.retake {
+	background-color: #e5f9bd;
+	align-self: flex-start;
+}
+#quiz .button.retake:after, #lastScreen .button.retake:after, #answersScreen .button.retake:after {
+	width: 250px;
+}
+#quiz .button.retake:before, #lastScreen .button.retake:before, #answersScreen .button.retake:before {
+	background-color: #d1f386;
+}
+#quiz .button.retake:hover:before, #lastScreen .button.retake:hover:before, #answersScreen .button.retake:hover:before, #quiz .button.retake.clicked:before, #lastScreen .button.retake.clicked:before, #answersScreen .button.retake.clicked:before {
+	width: 250px;
+}
+#quiz .button.answers, #lastScreen .button.answers, #answersScreen .button.answers {
+	align-self: flex-start;
+	background-color: #fca7a7;
+}
+#quiz .button.answers:after, #lastScreen .button.answers:after, #answersScreen .button.answers:after {
+	width: 230px;
+}
+#quiz .button.answers:before, #lastScreen .button.answers:before, #answersScreen .button.answers:before {
+	background-color: #fc624d;
+}
+#quiz .button.answers:hover:before, #lastScreen .button.answers:hover:before, #answersScreen .button.answers:hover:before, #quiz .button.answers.clicked:before, #lastScreen .button.answers.clicked:before, #answersScreen .button.answers.clicked:before {
+	width: 230px;
+}
+#quiz #feedback, #lastScreen #feedback, #answersScreen #feedback {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	margin: auto;
+	height: auto;
+	background: white;
+	box-shadow: 3px 3px 13px #eee;
+	z-index: 1000;
+	padding: 15px;
+	margin-left: -2%;
+}
+#quiz #feedback {
+	background: #e8fbff;
+}
+#quiz #feedback .feedbackFooter, #lastScreen #feedback .feedbackFooter, #answersScreen #feedback .feedbackFooter {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	align-items: center;
+	justify-content: flex-end;
+}
+.question h1, #lastScreen h1, #answersScreen h1 {
+	position: relative;
+}
+.question h1:before, #lastScreen h1:before, #answersScreen h1:before {
+	content: "";
+	position: absolute;
+	left: -30px;
+	top: -25px;
+	height: 60px;
+	width: 60px;
+	color: black;
+	border-radius: 50px;
+	background-color: #d5f7ff;
+	opacity: 0.7;
+}
+.question h1:after, #lastScreen h1:after, #answersScreen h1:after {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 50px;
+	width: 50px;
+	color: black;
+	border-radius: 50px;
+	background-color: #d9faff;
+	opacity: 0.6;
+	z-index: 1000;
+}
+.question h1:after {
+	content: "Question";
+}
+#lastScreen h1:after {
+	content: "You ";
+}
+#answersScreen h1:before {
+	background: #fc624d;
+	top: -17px;
+}
+#answersScreen h1:after {
+	content: "Answers";
+	background-color: #fca7a7;
+}
+#answers h2 {
+	position: relative;
+}
+#answers h2:before {
+	content: "Question";
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	height: 20px;
+	width: 20px;
+	color: black;
+	border-radius: 50px;
+	background-color: #d5f7ff;
+	opacity: 0.7;
+}
+#answers h2:after {
+	position: absolute;
+	left: -5px;
+	top: -10px;
+	height: 12px;
+	width: 12px;
+	color: black;
+	border-radius: 50px;
+	background-color: #d9faff;
+	opacity: 0.6;
+	z-index: 1000;
+	content: "";
+}
+.arrowNextQ {
+	display: flex;
+	width: 10%;
+	margin-left: 20px;
+}
+.arrowNextQ .triangle {
+	width: 0px;
+	height: 0px;
+	border-bottom: 17px solid transparent;
+	border-top: 17px solid transparent;
+	border-left: 20px solid black;
+	position: relative;
+}
+.arrowNextQ .triangle:before {
+	position: absolute;
+	content: '';
+	width: 0px;
+	height: 0px;
+	border-bottom: 9px solid transparent;
+	border-top: 9px solid transparent;
+	border-left: 11px solid white;
+	top: -9px;
+	left: -17px;
+}
+.arrowNextQ .triangle2 {
+	width: 22px;
+	height: 22px;
+	border-bottom: 3px solid black;
+	border-right: 3px solid black;
+	transform: rotate(-45deg);
+	position: relative;
+	margin-left: -14px;
+	margin-top: 5px;
+}
+.arrowNextQ .triangle2:before {
+	content: '';
+	position: absolute;
+	width: 22px;
+	height: 22px;
+	border-bottom: 3px solid black;
+	border-right: 3px solid black;
+	top: 0px;
+	left: 0px;
+}
+.arrowNextQ:hover {
+	cursor: pointer;
+}
+.arrowNextQ:hover .triangle2 {
+	animation: bouncetoLeft 450ms cubic-bezier(0, 1, 0.89, 1);
+	animation-direction: reverse;
+	position: relative;
+}
+.arrowNextQ:hover .triangle2:before {
+	content: '';
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	border-bottom: 3px solid black;
+	border-right: 3px solid black;
+	top: -2px;
+	left: -2px;
+	animation: appearing ease-in;
+	animation-duration: 700ms;
+	animation-delay: 320ms;
+	animation-fill-mode: forwards;
+	opacity: 0;
+}
+#answersScreen {
+	height: auto;
+}
+@keyframes bouncetoLeft {
+	0% {
+		transform: translatex(0px) rotate(-45deg);
+		opacity: 1;
+   }
+	50% {
+		transform: translatex(-7px) rotate(-45deg);
+		opacity: 1;
+   }
+	100% {
+		transform: translatex(0px) rotate(-45deg);
+		opacity: 0.8;
+   }
+}
+@keyframes appearing {
+	0% {
+		left: -2px;
+		top: -2px;
+		opacity: 0.2;
+   }
+	75% {
+		left: 10px;
+		top: 10px;
+		opacity: 0.9;
+   }
+	100% {
+		opacity: 0;
+		left: 15px;
+		top: 15px;
+   }
+}
